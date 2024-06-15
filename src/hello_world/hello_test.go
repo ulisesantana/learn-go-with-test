@@ -29,6 +29,12 @@ func TestHello(t *testing.T) {
 
 }
 
+func BenchmarkHello(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Hello("a", "")
+	}
+}
+
 func assertCorrectMessage(t testing.TB, got, want string) {
 	t.Helper()
 	if got != want {
