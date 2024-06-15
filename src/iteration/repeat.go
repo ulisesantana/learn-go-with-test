@@ -1,11 +1,15 @@
 package iteration
 
-const limit = 5
+import "strings"
 
-func Repeat(character string) string {
+func Repeat(character string, times int) string {
 	var repeated string
-	for i := 0; i < limit; i++ {
+	for i := 0; i < times; i++ {
 		repeated += character
 	}
 	return repeated
+}
+
+func BuiltInRepeat(character string, times int) string {
+	return strings.Repeat(character, times)
 }
