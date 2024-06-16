@@ -30,7 +30,7 @@ get_checksum() {
 
 # Function to watch for changes and run tests
 watch_tests() {
-  ./test.sh
+  ./scripts/test.sh
   print_message 3 "⏳ Watching for changes..."
   last_checksum=$(get_checksum)
 
@@ -40,7 +40,7 @@ watch_tests() {
     if [ "$last_checksum" != "$current_checksum" ]; then
       clear
       print_message 6 "🏁 Detected changes, running tests..."
-      if ! ./test.sh; then
+      if ! ./scripts/test.sh; then
         print_message 1 "❌ Tests failed, continuing to watch for changes..."
       fi
       last_checksum=$current_checksum

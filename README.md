@@ -5,10 +5,10 @@ This repository is my journey of learning Golang by reading the book [Learn Go w
 ### Run all test
 #### Custom script
 ```shell
-./test.sh # Run all test
+./scripts/test.sh # Run all test
 ```
 ```shell
-./test.sh -w # Run all test and keep watching changes
+./scripts/test.sh -w # Run all test and keep watching changes
 ```
 
 #### Native way
@@ -19,7 +19,7 @@ go test ./... -v # Run all test in project
 ### Run all benchmarks
 #### Custom script
 ```shell
-./benchmark.sh # Run all benchmarks in project
+./scripts/benchmark.sh # Run all benchmarks in project
 ```
 
 #### Native way
