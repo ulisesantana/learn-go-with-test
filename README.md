@@ -7,27 +7,39 @@ This repository is my journey of learning Golang by reading the book [Learn Go w
 ```shell
 ./test.sh # Run all test
 ```
-![Screenshot showing](docs/test.png)
 ```shell
 ./test.sh -w # Run all test and keep watching changes
 ```
-![Screenshot showing](docs/test-watch.png)
 
 #### Native way
 ```shell
 go test ./... -v # Run all test in project
 ```
-![Screenshot showing](docs/go-test.png)
 
 ### Run all benchmarks
 #### Custom script
 ```shell
 ./benchmark.sh # Run all benchmarks in project
 ```
-![Screenshot showing](docs/benchmark.png)
 
 #### Native way
 ```shell
 go test -bench=. ./...  # Run all benchmarks in project
 ```
-![Screenshot showing](docs/go-benchmark.png)
+
+### Check for missing error handling
+You will need to have installed `errcheck`. Install it with:
+```shell
+go install github.com/kisielk/errcheck@latest
+```
+Make sure you have this in your `.zshenv`:
+
+```shell
+# If you are using Go modules, the binaries are installed in the default location ($HOME/go/bin)
+export PATH=$PATH:$HOME/go/bin
+```
+
+Then you can run this for checking unhandled errors in your whole project:
+```shell
+errcheck ./...
+```
