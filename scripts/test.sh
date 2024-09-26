@@ -15,7 +15,7 @@ print_message() {
 # Function to run tests in a directory
 run_tests() {
   local dir="$1"
-  print_message 8 "☑️  Running tests in $dir"
+  print_message 6 "☑️  Running tests in $dir"
   (cd "$dir" && go test ./... -v)
 }
 
